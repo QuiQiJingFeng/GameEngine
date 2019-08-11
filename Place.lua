@@ -7,6 +7,52 @@ function Place:ctor()
 	self._curScore = 0       --当前局积分
 	self._totalScore = 0     --总积分
 	self._lastCard = nil     --最后一张摸到的牌
+	self._position = -1      --玩家的位置
+	self._roleId = -1        --玩家的ID
+	self._roleName = ""      --玩家名称
+	self._headUrl = ""       --玩家的头像地址
+	self._fd = -1            --玩家的fd
+	self._connected = false  --玩家是否连接
+end
+
+function Place:setConnected(connected)
+	self._connected = connected
+end
+
+function Place:getConnected()
+	return self._connected
+end
+
+function Place:setFd(fd)
+	self._fd = fd
+end
+
+function Place:getFd()
+	return self._fd
+end
+
+function Place:setHeadUrl(headUrl)
+	self._headUrl = headUrl
+end
+
+function Place:getHeadUrl()
+	return self._headUrl
+end
+
+function Place:setRoleId(roleId)
+	self._roleId = roleId
+end
+
+function Place:getRoleId()
+	return self._roleId
+end
+
+function Place:setPosition(position)
+	self._position = position
+end
+
+function Place:getPosition(position)
+	return self._position
 end
 
 function Place:addHandCard(card)
